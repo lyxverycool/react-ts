@@ -1,0 +1,68 @@
+@import (less, reference) "mixin.less";
+//头部
+header{
+  width: 100%;
+  height: 50px;
+  background-color: rgba(255, 255, 255, 1);
+  border-bottom:2px solid rgba(231, 234, 236, 1);
+  .logo{
+    width:80px;
+    height:50px;
+    line-height: 50px;
+    text-align: center;
+    background: @primary-color;
+    transition: background .3s, width .2s;
+  }
+  .logo-expansion{
+    width:220px;
+  }
+}
+//工作台title
+.workbenchTitle{
+  width:100%;
+  height: 30px;
+  border-bottom: 1px soldi rgba(231, 234, 236, 1);
+  .menuCollapsed{
+    width:80px;
+    height:30px;
+    line-height: 30px;
+    text-align: center;
+    background-color: #395358;
+    cursor: pointer;
+    transition: background .3s, width .2s;
+  }
+  .menuCollapsed-expansion{
+    width:220px;
+  }
+  .title{
+    line-height: 30px;
+    padding-left:20px;
+  }
+}
+
+//菜单导航
+.body-content{
+  width:100%;
+  @cap: 80px;
+  height: calc(~"100% - @{cap}");
+  .menu{
+    width:80px;
+    height:100%;
+    float:left;
+  }
+  .menu-expansion{
+    width:220px;
+  }
+  .content{
+    height:100%;
+    background: #fff;
+    width: calc(~"100% - 80px");
+    float:left;
+  }
+  .content-expansion{
+    height:100%;
+    background: #fff;
+    width: calc(~"100% - 220px");
+    float:left;
+  }
+}
