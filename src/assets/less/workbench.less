@@ -1,0 +1,15 @@
+@workbenchLeftWidth:350px;
+.workbench{
+  width:100%;
+  .workbench-right{
+    width:@workbenchLeftWidth;
+    height:100%;
+    float:left;
+    margin-left:20px;
+  }
+  .workbench-left{
+    width:calc(~"100% - @{workbenchLeftWidth} - 20px");
+    height:100%;
+    float:left;
+  }
+}

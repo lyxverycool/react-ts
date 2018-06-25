@@ -5,7 +5,7 @@ import WorkbenchTitle from '../components/workbenchTitle/Index';
 import Nav from '../components/nav/Index';
 import Home from "../pages/home/index";
 import IhrCalendar from "../pages/calendar/index";
-import '../assets/less/index.less';
+import '../assets/less/common.less';
 import '../assets/less/layout.less';
 
 
@@ -13,7 +13,7 @@ class App extends React.Component<any, any> {
 	constructor(props: any) {
 		super(props)
 		this.state = {
-			collapsed: false
+			collapsed: true
 		}
 	}
 	onChangeCollapsed = (collapsed: any) => {
@@ -26,12 +26,12 @@ class App extends React.Component<any, any> {
 			<div className="irenshi-container">
 				<Header collapsed={collapsed} />
 				<WorkbenchTitle collapsed={collapsed} onChangeCollapsed={this.onChangeCollapsed} />
-				<div className="body-content">
+				<div className="body-content flex">
 					<Nav collapsed={collapsed} />
-					<div className={collapsed ? 'content' : 'content-expansion'} >
+					<div className={collapsed ? 'content' : 'content content-expansion'} >
 						<Switch>
-							<Route path="/home" exact={true} component={Home} />
-							<Route path="/" component={IhrCalendar} />
+							<Route path="/" exact={true} component={Home} />
+							<Route path="/calendar" component={IhrCalendar} />
 							<Redirect to="/" />
 						</Switch>
 					</div>

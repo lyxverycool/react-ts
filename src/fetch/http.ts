@@ -14,7 +14,7 @@ export default class FetchHttp {
         this.credentials = "include";
         this.mode = "cors";
     }
-    handlerErr(e: any, url:any): any {
+    handlerErr(e: any, url: any): any {
         return Promise.reject("网络异常，请稍后重试！");
     }
     async fetchData(url: string, reqtype: string, options: any) {
@@ -44,7 +44,7 @@ export default class FetchHttp {
         if (!response.ok) {
             // store.dispatch('setLoading',false);
             if (response.status === 401) {
-               console.log('登录过期');
+                console.log('登录过期');
             } else {
                 //抛出异常
                 // console.log("抛出异常...");

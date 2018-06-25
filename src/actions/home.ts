@@ -1,24 +1,16 @@
 import * as constants from '../constants/actionsTypes';
+import FetchHttp from '../fetch/http';
 
-// import FetchHttp from '../fetch/http';
-// export const changeName = (value:any) => {
-//   return {
-//     type: constants.CHANGE_NAME,
-//     value,
-//   }
-// }
+export default interface ILIST {
+  type: constants.GET_LIST,
+  data: {}
+}
 
-export const changeHello = (path:any) => {
+export const GetListAction = (): ILIST => {
+  const poetyData = new FetchHttp().get('/index/test', '');
   return {
-    type: constants.CHANGE_HELLO,
-    path,
+    type: constants.GET_LIST,
+    data: poetyData
   }
 }
 
-// export const sendAcion = () => {
-//   const sendData = new FetchHttp().get('/web/common/company/getInfo.do', '');
-//   return {
-//     type: constants.SEND_DATA,
-//     data: sendData
-//   }
-// }
